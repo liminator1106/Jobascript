@@ -14,7 +14,7 @@ module.exports = function ($http) {
     return $http({
       method: 'DELETE',
       url: '/api/company',
-      data: companyObj
+      params: companyObj
     })
     .then(function (resp) {
       return resp.data;

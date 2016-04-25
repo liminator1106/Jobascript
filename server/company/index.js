@@ -33,7 +33,8 @@ exports.addCompany = function (req, res) {
 };
 
 exports.removeCompany = function (req, res) {
-  var companyId = req.body.id;
+  var companyId = req.query.id;
+  console.log('REQ.QUERY', req.query);
   db.removeCompany(companyId)
   .then(function (company) {
     console.log('company ' + company + ' has been successfully removed');
@@ -45,3 +46,4 @@ exports.removeCompany = function (req, res) {
     res.sendStatus(500);
   });
 };
+

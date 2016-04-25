@@ -1,10 +1,9 @@
 var inflection = require('inflection');
 
 module.exports = function ($scope, Company, companies) {
-  var refreshList;
   $scope.companies = companies;
 
-  refreshList = function (id) {
+  var refreshList = function (id) {
     $scope.companyName = '';
     Company.getCompany(id)
     .then(function (newCompany) {
@@ -25,3 +24,4 @@ module.exports = function ($scope, Company, companies) {
     .then(refreshList);
   };
 };
+
